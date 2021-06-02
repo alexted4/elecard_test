@@ -1,0 +1,19 @@
+.representation{
+    margin-top:62px;
+    margin-bottom:48px;
+}
+
+div.card-footer > p {
+    padding: 0;
+    margin: 0;
+}
+
+.align-spinner{
+    margin-top: 25vh;
+}
+
+.image-style {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
