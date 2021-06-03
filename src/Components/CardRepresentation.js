@@ -48,13 +48,17 @@ const CardRepresentation = ({items, closedItems, closeItem, restoreItem, opened}
     }
 
     const changePage = (to) => {
-        if (to < 0 || to > items.length/elPerRow/rowsPerPage + 1) {} else {
+        if (to < 1 || to > items.length/elPerRow/rowsPerPage + 1) {} else {
         history.push(to.toString())
         }
     }
 
     const handleInput = () => {
         setCurrentPage(ref.current.value)
+    }
+
+    const handleLast = () =>{
+        opened ? changePage(Math.floor(items.length/elPerRow/rowsPerPage + 1)) : changePage(Math.floor(closedItems.length/elPerRow/rowsPerPage + 1))
     }
     
     const getPagination = () => {
@@ -64,7 +68,7 @@ const CardRepresentation = ({items, closedItems, closeItem, restoreItem, opened}
                 <Pagination.Prev onClick = {()=> changePage(parseInt(currentPage)-1)}/>
                 <FormControl ref = {ref} style={{maxWidth: "50px"}} value={currentPage} onChange={()=> handleInput()}/>
                 <Pagination.Next onClick = {()=> changePage(parseInt(currentPage)+1)}/>
-                <Pagination.Last onClick = {()=> changePage(Math.floor(items.length/elPerRow/rowsPerPage + 1))}/>
+                <Pagination.Last onClick = {()=> handleLast()}/>
             </Pagination>
         )
     }
@@ -72,6 +76,10 @@ const CardRepresentation = ({items, closedItems, closeItem, restoreItem, opened}
     useEffect(()=>{
         setCurrentPage(params.page)
     }, [params])
+
+    useEffect(()=>{
+        (currentPage != '1') && history.push('1')
+    },[opened])
 
     return (
         <Container fluid className="representation">
