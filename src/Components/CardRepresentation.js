@@ -48,7 +48,9 @@ const CardRepresentation = ({items, closedItems, closeItem, restoreItem, opened}
     }
 
     const changePage = (to) => {
-        if (to < 1 || to > items.length/elPerRow/rowsPerPage + 1) {} else {
+        let arr = []
+        opened ? arr = items : arr = closedItems
+        if (to < 1 || to > arr.length/elPerRow/rowsPerPage + 1) {} else {
         history.push(to.toString())
         }
     }

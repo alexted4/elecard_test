@@ -31,14 +31,14 @@ function Footer() {
                 <Col xs = {6}>
                     <Link to = "/cards">
                     <Button variant="info" size="lg" block className = {card && 'active'} onClick={()=> toggleActive()}>
-                        <BsCardImage size="1.2em"/>
+                        <BsCardImage size="1.2em"/> Cards
                     </Button>
                     </Link> 
                 </Col>
                 <Col xs = {6}>
                     <Link to = "/tree">                       
                     <Button variant="info" size="lg" block className = {tree && 'active'} onClick={()=> toggleActive()}>
-                        <ImTree size="1.2em"/>
+                        <ImTree size="1.2em"/> Tree
                     </Button>
                     </Link>
                 </Col>

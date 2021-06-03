@@ -27,8 +27,8 @@ const OneCard = ({element, closeItem, opened, restoreItem}) => {
     return (
         <Card bg = "light" className="mb-2" text = "dark">
             <Card.Header>
-                <span>{element.name}</span>
                 {opened ? getButton(true) : getButton(false)}
+                <span>{element.name}</span>
             </Card.Header>
             <Card.Body style={{padding:0}}>
                 <Image className="image-style" responsive="true" fluid src={API+element.image}/>
