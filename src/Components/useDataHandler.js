@@ -55,22 +55,22 @@ const useDataHandler = () => {
 
     const closeItem = (i) => {
         if (items.length > 0){
-            let item =  items.find( el => el.filesize === i)
+            let item =  items.find( el => el.name === i)
             let closedArray = closedItems
             item && closedArray.push(item) 
             setClosedItems(closedArray)
-            let openedArray = items.filter( el => el.filesize !== i)
+            let openedArray = items.filter( el => el.name !== i)
             setItems(openedArray) 
         }
     }
 
     const restoreItem = (i) => {
         if (closedItems.length > 0){
-            let item = closedItems.find( el => el.filesize === i)
+            let item = closedItems.find( el => el.name === i)
             let openedArray = items
             item && openedArray.push(item)
             setItems(openedArray)
-            let closedArray = closedItems.filter( el => el.filesize !== i)
+            let closedArray = closedItems.filter( el => el.name !== i)
             setClosedItems(closedArray)
         }
     }

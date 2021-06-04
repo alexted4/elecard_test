@@ -18,7 +18,7 @@ const OneCard = ({element, closeItem, opened, restoreItem}) => {
         )
     }
     const handleButton = (isClose) => {
-        isClose ? closeItem(element.filesize) : restoreItem(element.filesize)
+        isClose ? closeItem(element.name) : restoreItem(element.name)
     }
 
     
